@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BatRBLX — Power. Precision. Performance.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg: #07080b;
+      --card: #10131a;
+      --accent1: #6f00ff;
+      --accent2: #00b3ff;
+      --text: #f1f4f8;
+      --muted: #9aa2ad;
+      --shadow: 0 0 30px rgba(0,0,0,0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, rgba(111,0,255,0.2) 0%, rgba(0,179,255,0.1) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(111,0,255,0.15) 0%, transparent 60%);
+      animation: pulse 8s infinite ease-in-out;
+      z-index: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+    .title { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; background: linear-gradient(90deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1.2rem; margin-top: 0.5rem; }
+
+    .actions { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      color: #fff;
+    }
+    .btn.primary:hover { filter: brightness(1.2); transform: translateY(-3px); }
+    .btn.ghost {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--muted);
+      backdrop-filter: blur(8px);
+    }
+    .btn.ghost:hover { color: var(--text); border-color: var(--accent2); transform: translateY(-3px); }
+
+    .trust { color: var(--muted); margin-top: 1rem; }
+
+    .features { padding: 5rem 0; }
+    .features h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 30px rgba(111,0,255,0.3);
+    }
+    .card i { color: var(--accent2); margin-bottom: 1rem; display: inline-block; }
+    .card h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .card p { color: var(--muted); }
+
+    .install ol {
+      margin: 1rem 0 0 1.2rem;
+      line-height: 1.8;
+    }
+    .disclaimer { margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
+
+    .testimonials {
+      background: linear-gradient(180deg, rgba(111,0,255,0.08), rgba(0,179,255,0.05));
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .testimonial {
+      max-width: 800px;
+      margin: 1rem auto;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 0.5rem;
+      padding: 3rem 0;
+      background: #0b0d12;
+      width: 100%;
+    }
+    .stat {
+      text-align: center;
+      flex: 0 0 auto;
+      min-width: 120px;
+      margin: 0 0.3rem;
+    }
+    .stat h3 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.2rem;
+    }
+    .stat p { color: var(--muted); margin-top: 0; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: linear-gradient(180deg, rgba(111,0,255,0.1), transparent);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content container">
+      <h1 class="title">BatRBLX</h1>
+      <p class="subtitle">Power. Precision. Performance — Roblox, evolved.</p>
+      <div class="actions">
+        <button class="btn primary"><i data-lucide="download"></i> Download</button>
+        <a href="#features" class="btn ghost"><i data-lucide="zap"></i> View Features</a>
+      </div>
+      <p class="trust">Community Verified • Safe • Built for Speed</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="features container">
+      <h2>Advanced Features</h2>
+      <div class="grid">
+        <div class="card"><i data-lucide="crosshair"></i><h3>Server Sniper</h3><p>Auto-detects and connects to the lowest-lag Roblox server with a single click.</p></div>
+        <div class="card"><i data-lucide="layout"></i><h3>UI Enhancer</h3><p>Clean themes, adaptive layout, hide clutter — full control of your Roblox site experience.</p></div>
+        <div class="card"><i data-lucide="clock"></i><h3>Session Tracker</h3><p>Local-only analytics to measure your playtime and browsing patterns within Roblox.</p></div>
+        <div class="card"><i data-lucide="code"></i><h3>Developer Mode</h3><p>Access game metadata, place IDs, creator stats, and debugging utilities instantly.</p></div>
+        <div class="card"><i data-lucide="shield"></i><h3>Security First</h3><p>No exploits, no cheats. 100% transparent and open-source verified.</p></div>
+        <div class="card"><i data-lucide="settings"></i><h3>Custom Themes</h3><p>Switch between light, dark, and neon themes or make your own for Roblox UI.</p></div>
+        <div class="card"><i data-lucide="search"></i><h3>Smart Search</h3><p>Improved search bar for games, groups, and users with instant results.</p></div>
+        <div class="card"><i data-lucide="message-square"></i><h3>Chat Enhancer</h3><p>Better message formatting, timestamps, and quick-copy features for Roblox chat.</p></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><h3>20+</h3><p>Users</p></div>
+      <div class="stat"><h3>267+</h3><p>Sessions Improved</p></div>
+      <div class="stat"><h3>98.9%</h3><p>Positive Feedback</p></div>
+    </section>
+
+    <section class="testimonials">
+      <h2>Loved by Roblox Players</h2>
+      <p class="testimonial">“BatRBLX completely changed how I use Roblox. It feels like the site finally caught up with 2025.” — <strong>@Nova</strong></p>
+      <p class="testimonial">“Fast, clean, and powerful. This extension is a must-have for any serious player.” — <strong>@Blaze</strong></p>
+    </section>
+
+    <section id="install" class="install container">
+      <h2>Install Guide</h2>
+      <ol>
+        <li>Click the download button above to get the latest version of BatRBLX.</li>
+        <li>Unzip the file to a folder on your computer.</li>
+        <li>Open <code>chrome://extensions</code> → Enable <strong>Developer mode</strong>.</li>
+        <li>Click <strong>Load unpacked</strong> and select the folder.</li>
+      </ol>
+      <p class="disclaimer">BatRBLX only enhances the Roblox website UI — it does not modify gameplay or access in-game systems.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 BatRBLX — Built by players, for players.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Direct download button
+    document.querySelector('.btn.primary').addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = 'https://raw.githubusercontent.com/BatRBLX/gshjkvfsighufsbtyuifbtyuiasftyubisatfyuivatyvuifatysuivfatyuisftyui/main/BatRBLX.rar';
+      link.download = 'BatRBLX.rar';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+</body>
+</html>
